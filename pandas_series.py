@@ -2,7 +2,7 @@ import pandas as pd
 
 grades = pd.Series([87,100,94])
 
-print(grades)
+#print(grades)
 
 grades = pd.Series(98.6, range(3))
 
@@ -25,14 +25,14 @@ grades.describe()
 
 grades =pd.Series([87,100,94], index=['Wally', 'Eva', 'Sam'])
 
-print(grades)
+#print(grades)
 
 #If you initialize a Series with a dictionary, its keys 
 
 
 grades = pd.Series({'Wally': 87, 'Eva': 100, 'Sam': 94})
 
-print(grades['Eva'])
+#print(grades['Eva'])
 #100
 
 grades.Wally
@@ -43,3 +43,28 @@ grades.dtype
 
 grades.values
 #array([87, 100, 94])
+
+
+#Series of Strings
+hardware = pd.Series(['Hammer', 'Saw', 'Wrench'])
+#print(hardware)
+
+""" output
+0    Hammer
+1       Saw
+2    Wrench
+dtype: object
+"""
+
+#calling string methods apply to each element
+hardware.str.contains('a')
+
+"""0   True
+   1   True
+   2   False
+   dtype: bool """
+
+hardware_upper = hardware.str.upper()
+print(hardware_upper)
+
+#All hardware names in all caps
