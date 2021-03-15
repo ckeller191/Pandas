@@ -74,4 +74,8 @@ print(grades.describe())
 pd.set_option('precision', 2)
 #changes numbers precision to 2 decimal places
 
+#by student
 print(grades.describe())
+
+#by test
+print(grades.T.describe())
